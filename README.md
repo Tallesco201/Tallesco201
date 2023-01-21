@@ -1,5 +1,5 @@
   👋  Oii eu sou o  Talles simao
-- 👀 Atualmente sou fonmado em desenvolvimento front-end
+- 👀 Atualmente sou fonmado em desenvolvimento web front-end
 - 🌱 Estudando Phyton
 
 <div>
@@ -16,6 +16,14 @@
    <img aligt="center" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
    <img aligt="center" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"/>
    <img aligt="center" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"/>
-   <img aligt="center" height="30" width="40" src=""/>
+   <img aligt="center" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
+   <img aligt="center" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"/>
+  </div>
+  
+  ##
+  
+  <div>
+    <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox" target="_blank" ><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+    <a href="" target="_blank" ><img src=""/></a>
   </div>
 
