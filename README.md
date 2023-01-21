@@ -1,4 +1,9 @@
  ## 👋  Oii eu sou o  Talles simao
+ 
+ <img src="https://user-images.githubusercontent.com/40778394/185477113-6e2fce00-35ac-46e4-8827-33b30c1ee332.png"/>
+ 
+ 
+ ##
 - 👀 Atualmente sou fonmado em desenvolvimento web front-end
 - 🌱 Estudando Phyton
 
