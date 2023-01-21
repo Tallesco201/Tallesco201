@@ -1,4 +1,4 @@
-  👋  Oii eu sou o  Talles simao
+ ## 👋  Oii eu sou o  Talles simao
 - 👀 Atualmente sou fonmado em desenvolvimento web front-end
 - 🌱 Estudando Phyton
 
