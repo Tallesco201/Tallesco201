@@ -4,7 +4,7 @@
  
  
  ##
-- 👀 Atualmente sou fonmado em desenvolvimento web front-end
+- 👀 Atualmente sou formado em desenvolvimento web front-end
 - 🌱 Estudando Python
 
 
