@@ -5,7 +5,7 @@
  
  ##
 - 👀 Atualmente sou fonmado em desenvolvimento web front-end
-- 🌱 Estudando Phyton
+- 🌱 Estudando Python
 
 
 ##
