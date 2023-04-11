@@ -4,8 +4,8 @@
  
  
  ##
-- 👀 Atualmente sou formado em desenvolvimento web front-end
-- 🌱 Estudando Python
+- 👀 Atualmente sou formado em desenvolvimento web Full-Stack
+- 🌱 Estudando Angular
 
 
 ##
