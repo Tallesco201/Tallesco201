@@ -2,41 +2,37 @@ name: Generate Datas
 
 on:
   schedule:
-    # todo dia à meia-noite e ao meio-dia
     - cron: '0 */12 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: write    # permite push no branch de saída
+  contents: write
 
 jobs:
   build:
-    name: Atualiza snake.gif
     runs-on: ubuntu-latest
 
     steps:
-      # 1) Checkout completo, para pegar todo o histórico de commits
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      # 2) Debug: conta quantos commits temos
       - name: Contar commits
         run: git rev-list --count HEAD
 
-      # 3) Gera o GIF da cobrinha
       - name: Gerar Snake GIF
         uses: Platane/snk@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    # <— adiciona o token aqui
         with:
           github_user_name: Tallesco201
           gif_out_path: dist/github-contribution-grid-snake.gif
+          range: 365                                  # opcional: últimos 365 dias
 
-      # 4) Debug: lista o conteúdo de dist para verificar tamanho e nome do arquivo
       - name: Listar dist/
         run: ls -lha dist
 
-      # 5) Publica no branch `output` (força empty commit se necessário)
       - name: Publicar no GitHub Pages (branch output)
         uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
