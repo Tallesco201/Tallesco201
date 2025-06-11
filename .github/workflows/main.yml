@@ -24,11 +24,11 @@ jobs:
       - name: Gerar Snake GIF
         uses: Platane/snk@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    # <— adiciona o token aqui
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github_user_name: Tallesco201
           gif_out_path: dist/github-contribution-grid-snake.gif
-          range: 365                                  # opcional: últimos 365 dias
+          args: "--range 365"    # <-- aplica o filtro de 365 dias
 
       - name: Listar dist/
         run: ls -lha dist
