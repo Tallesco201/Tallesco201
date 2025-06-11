@@ -2,31 +2,35 @@ name: Generate Datas
 
 on:
   schedule:
-    - cron: '0 */12 * * *'    # todo 12h à meia-noite e ao meio-dia
+    # executa todo dia à meia-noite e ao meio-dia
+    - cron: '0 */12 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: write            # permite push do gh-pages action
+  contents: write    # permite gravar no branch de output
 
 jobs:
   build:
-    name: Atualiza snake.svg
+    name: Atualiza snake.gif
     runs-on: ubuntu-latest
+
     steps:
-      # 1) Faz checkout com histórico completo
-      - uses: actions/checkout@v3
+      # 1) Faz checkout com todo o histórico de commits
+      - name: Checkout repo
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      # 2) Gera a cobrinha
-      - uses: Platane/snk@master
-        id: snake-gif
+      # 2) Gera o GIF da cobrinha
+      - name: Gerar Snake GIF
+        uses: Platane/snk@master
         with:
           github_user_name: Tallesco201
-          svg_out_path: dist/github-contribution-grid-snake.svg
+          gif_out_path: dist/github-contribution-grid-snake.gif
 
-      # 3) Publica no branch `output`
-      - uses: crazy-max/ghaction-github-pages@v2.1.3
+      # 3) Publica o diretório dist no branch `output`
+      - name: Publicar no GitHub Pages (branch output)
+        uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
           target_branch: output
           build_dir: dist
