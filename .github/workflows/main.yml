@@ -1,33 +1,36 @@
 name: Atualiza Snake GIF
 
 on:
-  schedule:        # executa a cada 12 horas
-    - cron: "0 */12 * * *"
+  schedule:
+    - cron: '0 */12 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: write    # permite que o step de gh-pages faça push
+  contents: write
 
 jobs:
   build:
-    name: Gerar e publicar Snake GIF
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout (histórico completo)
+      - name: Checkout (full history)
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
+      - name: Preparar dist
+        run: mkdir -p dist
+
       - name: Gerar Snake GIF
-        uses: Platane/snk@v3
+        uses: Platane/snk@master
+        id: snake-gif
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github_user_name: Tallesco201
           gif_out_path: dist/github-contribution-grid-snake.gif
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Listar conteúdo de dist/
+      - name: Listar dist/ no runner
         run: ls -lha dist
 
       - name: Publicar no branch output
