@@ -1,46 +1,44 @@
-name: Atualiza Snake GIF
+name: Generate Snake GIF
 
 on:
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: "0 */12 * * *"   # todo dia à meia-noite e ao meio-dia
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write           # permite push no repositório
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout (histórico completo)
+      - name: Checkout full history
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Preparar pasta dist
+      - name: Prepare dist folder
         run: mkdir -p dist
 
-      - name: Gerar Snake GIF
+      - name: Generate contribution snake GIF
         uses: Platane/snk@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           github_user_name: Tallesco201
           args: >
-            --range 365           # últimos 365 dias
-            --gif                 # gera GIF em vez de SVG
+            --gif
             --out dist/github-contribution-grid-snake.gif
-          outputs: dist/github-contribution-grid-snake.gif
-
-      - name: Listar dist/ no runner
-        run: ls -lha dist
-
-      - name: Publicar no branch main
-        uses: crazy-max/ghaction-github-pages@v2.1.3
-        with:
-          target_branch: main
-          build_dir: dist
-          allow_empty_commit: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List dist contents
+        run: ls -lha dist
+
+      - name: Publish to GitHub Pages (branch main)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: main
+          # keep files not overwritten:
+          keep_history: true
