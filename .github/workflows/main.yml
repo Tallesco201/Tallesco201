@@ -2,12 +2,12 @@ name: Generate Datas
 
 on:
   schedule:
-    # executa todo dia à meia-noite e ao meio-dia
+    # todo dia à meia-noite e ao meio-dia
     - cron: '0 */12 * * *'
   workflow_dispatch:
 
 permissions:
-  contents: write    # permite gravar no branch de output
+  contents: write    # permite push no branch de saída
 
 jobs:
   build:
@@ -15,24 +15,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) Faz checkout com todo o histórico de commits
+      # 1) Checkout completo, para pegar todo o histórico de commits
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      # 2) Gera o GIF da cobrinha
+      # 2) Debug: conta quantos commits temos
+      - name: Contar commits
+        run: git rev-list --count HEAD
+
+      # 3) Gera o GIF da cobrinha
       - name: Gerar Snake GIF
         uses: Platane/snk@master
         with:
           github_user_name: Tallesco201
           gif_out_path: dist/github-contribution-grid-snake.gif
 
-      # 3) Publica o diretório dist no branch `output`
+      # 4) Debug: lista o conteúdo de dist para verificar tamanho e nome do arquivo
+      - name: Listar dist/
+        run: ls -lha dist
+
+      # 5) Publica no branch `output` (força empty commit se necessário)
       - name: Publicar no GitHub Pages (branch output)
         uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
           target_branch: output
           build_dir: dist
+          allow_empty_commit: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
