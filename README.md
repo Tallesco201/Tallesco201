@@ -37,5 +37,6 @@
     <a aligt="center" href="https://www.linkedin.com/in/talles-simao-1a0852235/" target="_blank" ><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
   </div>
  
-![Snake animation](https://raw.githubusercontent.com/Tallesco201/Tallesco201/output/github-contribution-grid-snake.gif)
+![Snake animation](https://github.com/Tallesco201/Tallesco201/blob/output/github-contribution-grid-snake.svg)
+
 
