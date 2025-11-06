@@ -5,8 +5,8 @@
 
 ### 🎯 Sobre mim
 - 👨‍💻 **Pleno Web Developer** 
-- 🗓️ **3 anos de experiência** no mercado  
-- 🚀 +3 anos com **JavaScript** (Front & Back): Next.js, React, NestJS, Express, Bun, Node.js  
+- 🗓️ **5 anos de experiência** no mercado  
+- 🚀 +5 anos com **JavaScript** (Front & Back): Next.js, React, NestJS, Express, Bun, Node.js  
 - ☁️ Experiência em **AWS** & **GCP**  
 - ⚡ Foco em **performance** diária e **observabilidade** (monitoramento, logging)  
 - 🎨 Paixão por animações com **Framer Motion** e iniciando em **Three.js**  
